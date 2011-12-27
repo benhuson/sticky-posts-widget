@@ -1,25 +1,28 @@
-=== Sticky Posts Widget ===
-Contributors: husobj
-Donate link: http://www.benhuson.co.uk/wordpress-plugins/sticky-posts-widget/
-Tags: widget, sticky posts
-Requires at least: 2.9
-Tested up to: 3.0.4
+=== Themeable Sticky Posts ===
+
+Contributors: Ben Huson
+Donate link: http://www.benhuson.co.uk/donate
+Tags: widgets, sticky, theme, posts, featured
+Requires at least: 3.0
+Tested up to: 3.0.1
 Stable tag: 1.0
 
-A simple widget that will display a list of your sticky posts.
+A widget to display featured sticky posts. The built-in template displays a simple list of links, or you can create a template file in your theme for more complex layouts.
 
 == Description ==
 
-A simple widget that will display a list of your sticky posts.
+More details to follow with the next release.
 
 == Changelog ==
 
-= 1.0 =
+=== 1.0 ===
 
 * First release.
 
-== Installation ==
+== Frequently Asked Questions ==
 
-1. Download and unzip the most recent version of this plugin
-2. Upload the sticky-posts-widget folder to /path-to-wordpress/wp-content/plugins/
-3. Login to your WP Admin panel, click Plugins, and activate "Sticky Posts Widget"
+Q: What is a sticky post?
+A: A sticky post will always show on top of your posts regardless of the post date. It can be used for highlighting a post that you want to remain current.
+
+Q: How do I make a sticky post?
+A: When creating or editing a post, in the publish box under the "visibility" options there is an option to make your post sticky.
