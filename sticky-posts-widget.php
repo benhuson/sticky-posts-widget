@@ -5,7 +5,7 @@ Plugin Name: Sticky Posts Widget
 Plugin URI: http://www.benhuson.co.uk/wordpress-plugins/sticky-posts-widget/
 Description: A simple widget that will display a list of your sticky posts.
 Author: Ben Huson
-Version: 1.0
+Version: 2.0
 Author URI: http://www.benhuson.co.uk
 */
 

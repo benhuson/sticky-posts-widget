@@ -1,10 +1,10 @@
 === Sticky Posts Widget ===
 Contributors: husobj
-Donate link: http://www.benhuson.co.uk/wordpress-plugins/sticky-posts-widget/
+Donate link: https://github.com/benhuson/sticky-posts-widget
 Tags: widget, sticky posts
-Requires at least: 2.9
-Tested up to: 3.0.4
-Stable tag: 1.0
+Requires at least: 3.5
+Tested up to: 4.3
+Stable tag: 2.0
 
 A simple widget that will display a list of your sticky posts.
 
@@ -13,6 +13,11 @@ A simple widget that will display a list of your sticky posts.
 A simple widget that will display a list of your sticky posts.
 
 == Changelog ==
+
+= 2.0 =
+
+* Use PHP 5 class constructors.
+* If no sticky posts, don't show widget.
 
 = 1.0 =
 
