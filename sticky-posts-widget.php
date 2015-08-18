@@ -50,33 +50,39 @@ if ( ! class_exists( 'WP_Widget_Sticky_Posts' ) ) {
 	 		}
 			$show_date = isset( $instance['show_date'] ) ? $instance['show_date'] : false;
 
-			$r = new WP_Query( apply_filters( 'widget_sticky_posts_args', array(
-				'posts_per_page' => $number,
-				'no_found_rows'  => true,
-				'post_status'    => 'publish',
-				'post__in'       => get_option( 'sticky_posts' )
-			) ) );
+			$sticky_posts = get_option( 'sticky_posts' );
 
-			if ( $r->have_posts() ) :
-				echo $before_widget;
-				if ( $title ) {
-					echo $before_title . $title . $after_title;
-				}
-				echo '<ul>';
-				while ( $r->have_posts() ) : $r->the_post();
-					?>
-					<li>
-						<a href="<?php the_permalink(); ?>"><?php get_the_title() ? the_title() : the_ID(); ?></a>
-						<?php if ( $show_date ) : ?>
-							<span class="post-date"><?php echo get_the_date(); ?></span>
-						<?php endif; ?>
-					</li>
-					<?php
-				endwhile;
-				echo '</ul>';
-				echo $after_widget;
-				wp_reset_postdata();
-			endif;
+			if ( ! empty( $sticky_posts ) ) {
+
+				$r = new WP_Query( apply_filters( 'widget_sticky_posts_args', array(
+					'posts_per_page' => $number,
+					'no_found_rows'  => true,
+					'post_status'    => 'publish',
+					'post__in'       => $sticky_posts
+				) ) );
+
+				if ( $r->have_posts() ) :
+					echo $before_widget;
+					if ( $title ) {
+						echo $before_title . $title . $after_title;
+					}
+					echo '<ul>';
+					while ( $r->have_posts() ) : $r->the_post();
+						?>
+						<li>
+							<a href="<?php the_permalink(); ?>"><?php get_the_title() ? the_title() : the_ID(); ?></a>
+							<?php if ( $show_date ) : ?>
+								<span class="post-date"><?php echo get_the_date(); ?></span>
+							<?php endif; ?>
+						</li>
+						<?php
+					endwhile;
+					echo '</ul>';
+					echo $after_widget;
+					wp_reset_postdata();
+				endif;
+
+			}
 
 			$cache[$args['widget_id']] = ob_get_flush();
 			wp_cache_set( 'widget_sticky_posts', $cache, 'widget' );
